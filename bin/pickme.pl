@@ -12,5 +12,6 @@ BEGIN {
 }
 use Personal;
 
-my @choice = Personal::Menu_pick({max=>-1},@ARGV);
+#my @choice = Personal::Menu_pick({max=>-1},@ARGV);
+my @choice = Personal::Menu_pick(@ARGV);
 say for @ARGV[@choice];
