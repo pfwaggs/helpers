@@ -4,7 +4,12 @@
 
 use warnings;
 use strict;
-use feature ':5.10';
+use v5.18;
+use Path::Tiny;
+
+BEGIN {
+    unshift @INC, path("~/helpers/lib")->stringify unless grep {/helpers/} @INC;
+}
 use Personal;
 
 my @choice = Personal::Menu_pick({max=>-1},@ARGV);
